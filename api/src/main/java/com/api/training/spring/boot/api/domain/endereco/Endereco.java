@@ -22,16 +22,14 @@ public class Endereco {
     private String cep;
     private Integer numero;
     private String complemento;
-    private Integer fk_cliente;
 
-    @Autowired
     @OneToOne
+    @JoinColumn(name ="fk_cliente")
     private Cliente cliente;
 
-    public Endereco(DadosEndereco dados, Integer fkCliente) {
+    public Endereco(DadosEndereco dados) {
         this.cep = dados.cep();
         this.numero = dados.numero();
         this.complemento = dados.complemento();
-        this.fk_cliente = fkCliente;
     }
 }

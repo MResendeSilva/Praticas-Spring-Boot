@@ -28,7 +28,6 @@ public class Cliente {
 
     @Embedded
     @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
-    @JoinColumn(name="fk_cliente")
     Endereco endereco;
 
     public Cliente(DadosCadastroCliente dados) {
@@ -36,7 +35,7 @@ public class Cliente {
         this.cpf = dados.cpf();
         this.dtNascimento = dados.dtNascimento();
         this.email = dados.email();
-        this.endereco = new Endereco(dados.endereco(),idCliente);
+        this.endereco = new Endereco(dados.endereco());
     }
 
 
