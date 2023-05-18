@@ -3,30 +3,28 @@ package com.api.training.spring.boot.api.domain.cliente;
 import com.api.training.spring.boot.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+import java.time.LocalDate;
+
 public record DadosCadastroCliente(
 
-        @NotBlank
+        @NotNull
         String nome,
 
-        @NotBlank
-        @Pattern(regexp = "\\{11}")
+        @NotNull
+        @Pattern(regexp="\\d{11}")
         String cpf,
 
-        @NotBlank
+        @NotNull
         String dtNascimento,
 
-        @NotBlank
-        Integer idade,
-
-        @NotBlank
+        @NotNull
         @Email
         String email,
 
-        @NotBlank
+        @NotNull
         @Valid
         DadosEndereco endereco
 

@@ -1,6 +1,6 @@
 
 create table cliente (
-id_cliente Bigint primary key not null,
+id_cliente Bigint primary key not null auto_increment,
 nome varchar (50),
 cpf varchar (14),
 dt_nascimento date,
