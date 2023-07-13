@@ -39,6 +39,17 @@ public class Cliente {
     }
 
 
+    public void atualizarInformacoes(DadosAtualizacaoCliente dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
 
+        if (dados.cpf() != null) {
+            this.cpf = dados.cpf();
+        }
 
+        if (dados.email() != null) {
+            this.email = dados.email();
+        }
+    }
 }
